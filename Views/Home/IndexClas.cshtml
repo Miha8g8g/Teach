@@ -1,0 +1,32 @@
+﻿@using Teacherlog.ViewModels
+@model List<ClasViewModel>
+
+<h2>Class Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Course ID</th>
+            <th>Teacher ID</th>
+            <th>Time</th>
+            <th>Room</th>
+            <th>Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.CourseName</td>
+                <td>@item.LastName</td>
+                <td>@item.Time</td>
+                <td>@item.Room</td>
+                <td>|<a href="/Home/EditClas/@item.Id">Edit</a>| </td>
+            </tr>
+        }
+    </tbody>
+    <a asp-area="" asp-controller="Home" asp-action="DeleteClas">Delete Class</a>
+
+</table>

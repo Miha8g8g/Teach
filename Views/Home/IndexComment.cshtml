@@ -1,0 +1,30 @@
+﻿@using Teacherlog.ViewModels
+@model List<CommentViewModel>
+
+
+<h2>Comment Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Student ID</th>
+            <th>Teacher ID</th>
+            <th>Text</th>
+            <th>Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var comment in Model)
+        {
+            <tr>
+                <td>@comment.Id</td>
+                <td>@comment.LastNameS</td>
+                <td>@comment.LastNameT</td>
+                <td>@comment.Text</td>
+                <td>|<a href="/Home/EditComment/@comment.Id">Edit|</a> </td>
+            </tr>
+        }
+    </tbody>
+    <a asp-area="" asp-controller="Home" asp-action="DeleteComment">Delete Comment</a>
+</table>

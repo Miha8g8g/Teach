@@ -1,0 +1,29 @@
+﻿@using Teacherlog.ViewModels
+@model List<CourseViewModel>
+
+<h2>Course Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.Id</td>
+                <td>@course.CourseName</td>
+                <td>@course.Description</td>
+                <td><a href="/Home/EditCourse/@course.Id">Edit</a> |</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Links should be inside the table -->
+<a asp-area="" asp-controller="Home" asp-action="DeleteCourse">Delete Course</a>

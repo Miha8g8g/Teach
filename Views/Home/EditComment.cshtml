@@ -1,0 +1,55 @@
+﻿@model Teacherlog.Models.Comment
+
+@{
+    ViewData["Title"] = "EditComment";
+}
+
+<h1>EditComment</h1>
+
+<h4>Comment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditComment">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="StudentId" class="control-label"></label>
+                <select asp-for="StudentId" class="form-control" asp-items="ViewBag.StudentId">
+                @if (ViewBag.Students != null)
+                {
+                    @foreach (var student in ViewBag.Students)
+                    {
+                        <option value="@student.Id">@student.FirstName @student.LastName </option>
+                    }
+                }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeacherId" class="control-label"></label>
+                <select asp-for="TeacherId" class="form-control" asp-items="ViewBag.TeacherId">
+                    @if (ViewBag.Teachers != null)
+                    {
+                        @foreach (var teacher in ViewBag.Teachers)
+                        {
+                            <option value="@teacher.Id">@teacher.FirstName @teacher.LastName </option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

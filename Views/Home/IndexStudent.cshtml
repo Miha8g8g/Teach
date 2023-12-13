@@ -1,0 +1,31 @@
+﻿@using Teacherlog.ViewModels
+@model List<StudentViewModel>
+
+<h2>Student Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions </th>
+            <!-- Add more columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Email</td>
+                <td>|<a href="/Home/EditStudent/@student.Id">Edit|</a> </td>
+                <!-- Add more columns as needed -->
+            </tr>
+        }
+    </tbody>
+    <a asp-area="" asp-controller="Home" asp-action="DeleteStudent">Delete Student</a>
+</table>
