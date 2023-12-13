@@ -1,0 +1,29 @@
+﻿@using Teacherlog.ViewModels
+@model List<GradeViewModel>
+
+<h2>Grade Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Student</th>
+            <th>Course </th>
+            <th>Value</th>
+            <th>Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr>
+                <td>@grade.Id</td>
+                <td>@grade.LastNameS @grade.FirstNameS</td>
+                <td>@grade.CourseName</td>
+                <td>@grade.Value</td>
+                <td>|<a href="/Home/EditGrade/@grade.Id">Edit|</a> </td>
+            </tr>
+        }
+    </tbody>
+    <a asp-area="" asp-controller="Home" asp-action="DeleteGrade">Delete Grate</a>
+</table>
