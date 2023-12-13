@@ -1,0 +1,107 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: url("https://vechirniy.kyiv.ua/uploads/2022/08/31/img_03912.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+}
+
+.text-center {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: #0056b3;
+    }
+
+
+
+.navbar {
+    position: fixed;
+    bottom: 79%;
+    width: 100%;
+    /* Другие стили для навигационного меню */
+}
+
+@media (min-height: 915px) {
+    .navbar {
+        position: fixed;
+        bottom: 87%;
+        width: 100%;
+        /* Другие стили для навигационного меню */
+    }
+}
+
+@media (min-width: 600px) {
+    .navbar {
+        position: fixed;
+        bottom: 70%;
+        width: 100%;
+        /* Другие стили для навигационного меню */
+    }
+}
+
+@media (min-height: 1100px) {
+    .navbar {
+        position: fixed;
+        bottom: 89%;
+        width: 100%;
+        /* Другие стили для навигационного меню */
+    }
+}
+@media (max-width: 540px) {
+    .navbar {
+        position: fixed;
+        bottom: 80%;
+        width: 100%;
+        background-color: #f8f9fa; /* Цвет фона навигационного меню */
+    }
+
+    .navbar-nav {
+        flex-direction: row !important; /* Переопределение направления flexbox */
+        justify-content: space-around; /* Выравнивание пунктов меню по горизонтали */
+        padding: 8px 0; /* Внутренний отступ для пунктов меню */
+    }
+
+        .navbar-nav .nav-item {
+            margin: 0; /* Удаление внешних отступов у пунктов меню */
+        }
+
+    .container {
+        padding-bottom: 56px; /* Учитывайте высоту навигационного меню */
+    }
+}
